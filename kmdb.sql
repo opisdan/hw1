@@ -14,6 +14,32 @@
 -- - An actor can be in multiple movies.
 -- - Everything you need to do in this assignment is marked with TODO!
 
+-- MOVIE
+-- -id
+-- -title  -year -rating
+-- -studio
+-- characters
+-- actor_id
+-- studio_id
+
+-- ACTOR
+-- id
+-- first_name 
+-- last_name
+
+
+-- STUDIO
+-- id
+-- Name
+
+
+
+
+
+
+
+
+
 -- User stories
 --
 -- - As a guest, I want to see a list of movies with the title, year released,
@@ -102,13 +128,434 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS characters;
+
+
 -- Create new tables, according to your domain model
 -- TODO!
+
+CREATE TABLE movies (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+year INTEGER,
+rating TEXT,
+actor_id INTEGER,
+character_id INTEGER,
+studio_id INTEGER
+);
+
+CREATE TABLE characters (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT,
+actor_id INTEGER
+);
+
+CREATE TABLE actors (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+first_name TEXT,
+last_name TEXT
+);
+
+CREATE TABLE studios (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+
+--actors
+INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Christian",
+    "Bale"
+);
+INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Michael",
+    "Caine"
+);
+INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Liam",
+    "Neeson"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Katie",
+    "Holmes"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Gary",
+    "Oldman"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Heath",
+    "Ledger"
+);
+INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Aaron",
+    "Eckhart"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Maggie",
+    "Gyllenhaal"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Tom",
+    "Hardy"
+);INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Joseph",
+    "Gordon-Levitt"
+);
+INSERT INTO actors (
+    first_name,
+    last_name
+)VALUES (
+    "Anne",
+    "Hathaway"
+);
+
+--Characters
+
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Batman",
+    "1"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Alfred",
+    "2"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Ra's Al Ghul",
+    "3"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Rachel Dawes",
+    "4"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Gordon",
+    "5"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Joker",
+    "6"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Dent",
+    "7"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Bane",
+    "9"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Robin",
+    "10"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Selina Kyle",
+    "11"
+);
+INSERT INTO characters (
+    name,
+    actor_id
+)VALUES (
+    "Rachel Dawes",
+    "8"
+);
+
+--Studio
+
+INSERT INTO studios (
+    name
+)VALUES (
+    "Warner Bros."
+);
+
+--Movives
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "1",
+    "1",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "2",
+    "2",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "6",
+    "6",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "7",
+    "7",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "8",
+    "4",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "1",
+    "1",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "5",
+    "5",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "9",
+    "8",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "10",
+    "9",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "11",
+    "10",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "1",
+    "1",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "2",
+    "2",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "3",
+    "3",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "4",
+    "4",
+    "1"
+);
+INSERT INTO movies(
+    name,
+    year,
+    rating,
+    actor_id,
+    character_id,
+    studio_id
+)VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "5",
+    "5",
+    "1"
+);
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -116,6 +563,7 @@
 
 -- The SQL statement for the movies output
 -- TODO!
+SELECT movies.name, movies.year, movies.rating, studios.name FROM movies INNER JOIN studios ON studios.id = movies.studio_id GROUP BY movies.name ORDER BY movies.year;
 
 -- Prints a header for the cast output
 .print ""
@@ -126,3 +574,10 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.name, actors.first_name, actors.last_name, characters.name FROM movies 
+INNER JOIN actors ON actors.id = movies.actor_id
+INNER JOIN characters ON characters.id = movies.character_id
+ORDER BY movies.year
+
+;
